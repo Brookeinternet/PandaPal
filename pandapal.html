@@ -1,0 +1,44 @@
+import React from 'react';
+
+const products = [
+  {
+    id: 1,
+    name: 'Mochi the Panda Mug',
+    description: 'Start your day with a cozy sip and a sleepy panda smile.',
+    image: '/images/mochi-mug.jpg',
+    price: '$18.00',
+  },
+  {
+    id: 2,
+    name: 'Snuggle Season Hoodie',
+    description: 'Soft, warm, and perfect for panda naps.',
+    image: '/images/snuggle-hoodie.jpg',
+    price: '$42.00',
+  },
+  // Add more products here
+];
+
+const StorePage = () => {
+  return (
+    <div className="bg-gray-50 min-h-screen py-12 px-6">
+      <h1 className="text-4xl font-bold text-center text-bamboo mb-10">🐼 PandaPal Store</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {products.map((product) => (
+          <div key={product.id} className="bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition">
+            <img src={product.image} alt={product.name} className="w-full h-64 object-cover rounded-md" />
+            <h2 className="text-xl font-semibold mt-4">{product.name}</h2>
+            <p className="text-sm text-gray-600 mt-2">{product.description}</p>
+            <div className="mt-4 flex justify-between items-center">
+              <span className="text-lg font-bold text-green-600">{product.price}</span>
+              <button className="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default StorePage;
