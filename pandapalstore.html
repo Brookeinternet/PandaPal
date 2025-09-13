@@ -5,8 +5,8 @@ const StorePage = () => {
 
   useEffect(() => {
     // Replace with your backend route that proxies Printify API
-    fetch('/api/products')
-      .then((res) => res.json())
+    fetch('https://pandapal-rrjv.onrender.com/api/products')
+.then((res) => res.json())
       .then((data) => setProducts(data))
       .catch((err) => console.error('Failed to load products:', err));
   }, []);
