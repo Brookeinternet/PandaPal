@@ -4,7 +4,7 @@ const StorePage = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    // Replace with your backend route that proxies Printify API
+    
     fetch('https://pandapal-rrjv.onrender.com/api/products')
 .then((res) => res.json())
       .then((data) => setProducts(data))
